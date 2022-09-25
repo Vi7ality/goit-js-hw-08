@@ -18,7 +18,10 @@ const formData = {}
 
 function onSubmit (evt) {
     evt.preventDefault();
-    console.log(formData)
+    const {
+        elements: { email, message }
+    } = evt.target
+    console.log({email: email.value, message: message.value})
     evt.target.reset();
     localStorage.removeItem(LOCAL_STORAGE_KEY)
 }
